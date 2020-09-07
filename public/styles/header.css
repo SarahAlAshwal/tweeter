@@ -1,0 +1,16 @@
+header{
+  background-color: #e5a63c;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+header img {
+  background-color: #e5a63c;
+background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
