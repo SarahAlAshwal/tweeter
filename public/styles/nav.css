@@ -10,9 +10,10 @@ nav {
 nav span {
   font-family: 'Bungee', sans-serif;
   font-size: xx-large;
-  margin: 1.5em;
+  padding: 1.5em;
 }
 
 nav h3 {
-  margin: 1.5em;
+  margin: 0em;
+  padding: 1.5em;
 }
