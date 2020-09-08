@@ -18,7 +18,8 @@
   border-style: none;
   border-bottom: 5px solid black;
   background-color: inherit;
-  font-size: 70%;
+  outline: none;
+  font-size: 80%;
   height: 30;
 }
 
