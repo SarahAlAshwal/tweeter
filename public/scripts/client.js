@@ -60,20 +60,26 @@ const createTweetElement = function(tweet) {
 
 $(document).ready(function(){
 
-  // const loadTweets = function (){
-  //  // $ajax('/tweets/',{method: 'GET'})
-  // }
+//Fetch the tweets using ajax
+  const loadTweets = function (){
+   $.ajax('/tweets/',{method: 'GET', dataType: 'JSON'}).then( function(response){
 
-  renderTweets(data);
+    renderTweets(response)
+   } 
+   );
+  }
+
+  loadTweets();
+
 
   //Form submission handeling
-$(".tweet-form").on('submit', function(evt) {
-  evt.preventDefault();
-  console.log($('#tweet-text').serialize());
-  $.ajax('/tweets/', {method: 'POST', data: $('#tweet-text').serialize()} ).then(
-  
-  )
-});
+  $(".tweet-form").on('submit', function(evt) {
+    evt.preventDefault();
+    console.log($('#tweet-text').serialize());
+    $.ajax('/tweets/', {method: 'POST', data: $('#tweet-text').serialize()} ).then(
+    
+    )
+  });
 } ) ;
 
 
