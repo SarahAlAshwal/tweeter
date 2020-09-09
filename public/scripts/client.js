@@ -39,7 +39,7 @@ const renderTweets = function(tweets) {
     $('#tweet-container').append(attachedTweet);
   }
 }
-
+//displaying the tweets dynamically
 const createTweetElement = function(tweet) {
   let $tweet = `
         <article class="tweet">
@@ -60,7 +60,20 @@ const createTweetElement = function(tweet) {
 
 $(document).ready(function(){
 
+  // const loadTweets = function (){
+  //  // $ajax('/tweets/',{method: 'GET'})
+  // }
+
   renderTweets(data);
+
+  //Form submission handeling
+$(".tweet-form").on('submit', function(evt) {
+  evt.preventDefault();
+  console.log($('#tweet-text').serialize());
+  $.ajax('/tweets/', {method: 'POST', data: $('#tweet-text').serialize()} ).then(
+  
+  )
+});
 } ) ;
 
 
