@@ -34,8 +34,8 @@ const renderTweets = function(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 
-  for (const t of tweets) {
-    let attachedTweet = createTweetElement(t);
+  for (let t = tweets.length - 1 ; t >= 0; t--) {
+    let attachedTweet = createTweetElement(tweets[t]);
     $('#tweet-container').append(attachedTweet);
   }
 }
@@ -58,32 +58,36 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
-$(document).ready(function(){
-
 //Fetch the tweets using ajax
-  const loadTweets = function (){
-   $.ajax('/tweets/',{method: 'GET', dataType: 'JSON'}).then( function(response){
+const loadTweets = function (){
+  $.ajax('/tweets/',{method: 'GET', dataType: 'JSON'}).then( function(response){
 
-    renderTweets(response)
-   } 
-   );
-  }
+   renderTweets(response)
+  } 
+  );
+ }
 
+
+$(document).ready(function(){
   loadTweets();
 
 
   //Form submission handeling
   $(".tweet-form").on('submit', function(evt) {
     evt.preventDefault();
-    console.log($('#tweet-text').val());
     if(! $('#tweet-text').val()){
       alert("Sorry, you can't post an empty tweet");
     } else if ($('#tweet-text').val().length > 140) {
       alert('Sorry, your tweet is longer than 140 characters!!')
     } else {
-      $.ajax('/tweets/', {method: 'POST', data: $('#tweet-text').serialize()} ).then(
-        console.log('inside post')
-        )
+      $.ajax({url: '/tweets/', method: 'POST', data: $('#tweet-text').serialize()} ).then( function(){
+        console.log('inside post');
+        $('#tweet-text').val('');
+        $('.counter').val(140);
+        $('#tweet-container').empty();
+        loadTweets();
+
+      });
     }
    
   });
