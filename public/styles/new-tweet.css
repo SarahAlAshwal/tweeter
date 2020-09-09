@@ -23,7 +23,7 @@
   height: 30;
 }
 
-footer {
+.tweet-form footer {
   display: flex;
   justify-content: space-between;
   margin-top:1em;

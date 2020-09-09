@@ -1,0 +1,56 @@
+article {
+  margin: 1.5em;
+  border:5px solid black; ;
+}
+
+.tweet:hover {
+  box-shadow: 10px 5px rgb(189, 182, 233);
+
+}
+
+.handler{
+  visibility: hidden;
+}
+
+.tweet:hover .handler {
+  visibility: visible;
+}
+
+article header {
+  margin: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+  
+}
+
+article header img {
+  margin-top: 0em;
+  width: 100px;
+  height: 100px;
+}
+
+#name-photo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: normal;
+}
+
+.tweet-text {
+  margin: 1em;
+  border-bottom:5px solid black;
+}
+
+article footer {
+  margin: 0.5em;
+  font-size: smaller;
+  
+}
+
+article header > p {
+  font-style: oblique;
+  color: rgb(189, 182, 233);
+}
+

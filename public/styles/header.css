@@ -1,4 +1,4 @@
-header{
+#main-header{
   background-color: #e5a63c;
   height: 400px;
   width: 100%;
@@ -9,7 +9,7 @@ header{
   
 }
 
-header img {
+#main-header img {
   background-color: #e5a63c;
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */

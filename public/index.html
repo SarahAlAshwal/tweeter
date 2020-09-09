@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,7 +30,7 @@
       <h3><strong>Write</strong> a new tweet</h3>
     </nav>
 
-    <header>
+    <header id="main-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -51,6 +52,19 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
+      </section>
+      <section class="tweet-container">
+        <article class="tweet">
+          <header>
+          <div id= name-photo>
+            <img src="/images/profile-hex.png"></img>
+            <p>Name</p>
+          </div>
+          <p class="handler">@name</p>
+          </header>
+          <p class="tweet-text">this is my first tweet</p>
+          <footer>10 days ago</footer>
+        </article>
       </section>
     </main>
   </body>
