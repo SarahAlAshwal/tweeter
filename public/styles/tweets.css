@@ -31,7 +31,7 @@ article header img {
   height: 100px;
 }
 
-#name-photo{
+.name-photo{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
