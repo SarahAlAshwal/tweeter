@@ -58,6 +58,9 @@ footer .red{
   visibility: hidden; 
 }
 
+.visible {
+  visibility: visible;
+}
 
 #error-text {
   color: red;
