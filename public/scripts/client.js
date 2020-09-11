@@ -11,39 +11,39 @@ const escape =  function(str) {
 };
 
 //The input time is milliseconds and the resturn the value is the approximate time in minutes, hours or days
-const changeTime = function (time) {
+const changeTime = function(time) {
   let temp;
   if (time) {
     const timeMin = Math.floor((Date.now() - Number(time)) / 60000);
-    if(timeMin < 1) {
-        return 'now';
+    if (timeMin < 1) {
+      return 'now';
     } else if (timeMin === 1) {
-        return '1 minute ago';
+      return '1 minute ago';
     } else if ( timeMin > 1 & timeMin < 60) {
-        return `${timeMin} minutes ago`;
+      return `${timeMin} minutes ago`;
     } else if (timeMin >= 60 & timeMin < 1440) {
-        temp = Math.floor(timeMin / 60);
-        return `${temp} hours ago`;
+      temp = Math.floor(timeMin / 60);
+      return `${temp} hours ago`;
     } else {
-        temp = Math.floor(timeMin / 1440);
+      temp = Math.floor(timeMin / 1440);
+      if (temp === 1) {
+        return `one day ago`;
+      } else if (temp < 30 ) {
+        return `${temp} days ago`;
+      } else {
+        temp = Math.floor(temp / 365);
         if (temp === 1) {
-          return `one day ago`;
-        } else if (temp < 30 ) {
-            return `${temp} days ago`;
+          return `one year ago`;
         } else {
-          temp = Math.floor(temp / 365);
-          if (temp === 1) {
-            return `one year ago`;
-          } else {
-            return `${temp} years ago`;
+          return `${temp} years ago`;
           }
           
         }
-    } 
+    }
 
   } else {
-    return ''
-  } 
+    return '';
+  }
 };
 
 const renderTweets = function(tweets) {
@@ -51,11 +51,11 @@ const renderTweets = function(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
 
-  for (let t = tweets.length - 1 ; t >= 0; t--) {
+  for (let t = tweets.length - 1; t >= 0; t--) {
     let attachedTweet = createTweetElement(tweets[t]);
     $('#tweet-container').append(attachedTweet);
   }
-}
+};
 //displaying the tweets dynamically
 const createTweetElement = function(tweet) {
   let $tweet = `
@@ -70,21 +70,21 @@ const createTweetElement = function(tweet) {
           <p class="tweet-text">${escape(tweet.content.text)}</p>
           <footer>${changeTime(tweet.created_at)}</footer>
         </article>
-  ` ;
+  `;
 
   return $tweet;
-}
+};
 
 //Fetch the tweets using ajax
-const loadTweets = function (){
-  $.ajax('/tweets/',{method: 'GET', dataType: 'JSON'}).then( function(response){
-   renderTweets(response)
-  } 
+const loadTweets = function(){
+  $.ajax('/tweets/',{method: 'GET', dataType: 'JSON'}).then(function(response){
+   renderTweets(response);
+  }
   );
- }
+};
 
 //////////////////////////
-$(document).ready(function(){
+$(document).ready(function() {
   $('#error-message').slideUp();
   loadTweets();
 
@@ -93,7 +93,7 @@ $(document).ready(function(){
   $(".tweet-form").on('submit', function(evt) {
     evt.preventDefault();
     //Empty tweet error
-    if(! $('#tweet-text').val()){
+    if (! $('#tweet-text').val()){
       $('#error-text').text("Sorry, you can't post an empty tweet");
       $('#error-message').addClass('visible');
       $('#error-message').slideDown();
@@ -103,8 +103,7 @@ $(document).ready(function(){
       $('#error-message').addClass('visible');
       $('#error-message').slideDown();
     } else {
-      const input = $('#tweet-text').serialize();
-      $.ajax({url: '/tweets/', method: 'POST', data: $('#tweet-text').serialize()}).then( function(){
+      $.ajax({url: '/tweets/', method: 'POST', data: $('#tweet-text').serialize()}).then(function() {
   
         $('#tweet-text').val('');
         $('.counter').val(140);
@@ -117,6 +116,4 @@ $(document).ready(function(){
     }
    
   });
-} ) ;
-
-
+});
