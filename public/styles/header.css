@@ -15,3 +15,38 @@
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
+@media only screen and (min-width: 1024px) {
+  #header-part{
+    margin: 2em;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #main-header{
+
+    margin: 2em;
+    margin-left: 0.5em;
+    margin-top: 2em;
+    width: 30%;
+    height: 350px;
+  }
+
+  #profile-image{
+    width: 200px;
+    background-color: transparent;
+  }
+
+  .container {
+    width: 60%;
+  }
+
+  main {
+    margin: 1em;
+  }
+
+
+
+ }

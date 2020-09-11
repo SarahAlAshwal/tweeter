@@ -46,7 +46,6 @@ footer .red{
   flex-direction: row;
   justify-content: space-evenly;
   border: 5px solid red;
-  visibility: hidden; 
 }
 
 #error-message img{
@@ -55,10 +54,10 @@ footer .red{
 
 }
 
-.change-visibility{
-  visibility: visible; 
-  /* border: 5px solid green; */
+.hidden {
+  visibility: hidden; 
 }
+
 
 #error-text {
   color: red;
