@@ -13,9 +13,10 @@ Tweeter is a simple, single-page Twitter application that allow users share thie
 
 ## Final Product
 
-!["A sreenshot for the creating a new short URL"](https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/CreateNewURL.png)
-!["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/EditUrl.png)
-!["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tinyapp/blob/master/Docs/UrlsPage.png)
+!["A sreenshot for the creating a new short URL"](https://github.com/SarahAlAshwal/tweeter/blob/master/Doc/main.png)
+!["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tweeter/blob/master/Doc/tweets.png)
+!["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tweeter/blob/master/Doc/emptyTweetError.png)
+!["A screenshot for editing the longURl for one of the short URLs"](https://github.com/SarahAlAshwal/tweeter/blob/master/Doc/longTweetError.png)
 
 ## Getting Started
 
